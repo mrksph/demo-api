@@ -1,11 +1,11 @@
 # Use a base image with Java 21 runtime
-FROM openjdk:21-jre-slim
+FROM bellsoft/liberica-openjdk-alpine:21-cds
 
 # Set the working directory in the container
 WORKDIR /app
 
 # Copy the JAR file into the container
-COPY target/demo-api.jar /app/demo-api.jar
+COPY target/demo-api-*.jar /app/demo-api.jar
 
 # Expose the port your application runs on
 EXPOSE 8080
